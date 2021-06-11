@@ -1,0 +1,20 @@
+h1 {
+    color:crimson;
+}
+p {
+    color:chartreuse;
+    display: inline-block;
+}
+#red {
+    color:red
+}
+.brown {
+    color:brown
+}
+
+div h1 {
+    color:green
+}
+.gray {
+    color:gray
+}

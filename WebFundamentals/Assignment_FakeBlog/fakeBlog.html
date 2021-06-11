@@ -1,120 +1,164 @@
 <!DOCTYPE html>
 <html lang=en>
-    <head>
-        <meta charset="utf-8">
-        <title>My Fake Blog</title>
-        <meta name="description" content="This is just a fake blog and I'm learning to code" >
-        <link rel="stylesheet" href="my_css_file.css">
-        <script src="my_javascript_library.js"></script>
-        <script src="another_javascript_file.js"></script>
-        <style>
-            .tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
-            .tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
-              font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-            .tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
-              font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-            .tg .tg-hmp3{background-color:#D2E4FC;text-align:left;vertical-align:top}
-            .tg .tg-0lax{text-align:left;vertical-align:top}
-        </style>
-    </head>
-    <body>
-        <h1>Michael Jordan</h1>
-        <img id="logo" src="mj.jpg" width="400" height="500" alt="My First Website's logo">
-        <p>
-            Michael Jeffrey Jordan, also known by his initials MJ, is an American businessman and former professional basketball player. 
-            He is the principal owner and chairman of the Charlotte Hornets of the National Basketball Association and of 23XI Racing in the NASCAR Cup Series.
-        </p>
 
-       
-        <table class="tg">
-            <thead>
-              <tr>
-                <th class="tg-0lax">Year</th>
-                <th class="tg-0lax">PPG</th>
-                <th class="tg-0lax">MVP</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="tg-hmp3">1990-91</td>
-                <td class="tg-hmp3">31.5</td>
-                <td class="tg-hmp3">Yes</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">1991-92</td>
-                <td class="tg-0lax">30.1</td>
-                <td class="tg-0lax">Yes</td>
-              </tr>
-              <tr>
-                <td class="tg-hmp3">1992-93</td>
-                <td class="tg-hmp3">32.6</td>
-                <td class="tg-hmp3">No</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">1995-96</td>
-                <td class="tg-0lax">30.4</td>
-                <td class="tg-0lax">Yes</td>
-              </tr>
-              <tr>
-                <td class="tg-hmp3">1996-97</td>
-                <td class="tg-hmp3">29.6</td>
-                <td class="tg-hmp3">No</td>
-              </tr>
-              <tr>
-                <td class="tg-0lax">1997-98</td>
-                <td class="tg-0lax">28.7</td>
-                <td class="tg-0lax">Yes</td>
-              </tr>
-            </tbody>
-        </table>
-        <br />
+<head>
+  <meta charset="utf-8">
+  <title>My Fake Blog</title>
+  <meta name="description" content="This is just a fake blog and I'm learning to code">
+  <link rel="stylesheet" href="my_css_file.css">
+  <script src="my_javascript_library.js"></script>
+  <script src="another_javascript_file.js"></script>
+  <style>
+    .tg {
+      border-collapse: collapse;
+      border-color: #9ABAD9;
+      border-spacing: 0;
+    }
 
-        <ul>
-            <li> 1984 - 1993 Chicago Bulls</li>
-            <li> 1995 - 1998 Chicago Bulls</li>
-            <li> 2001 - 2003 Washington Wizards </li>
-        </ul>
-        <br />
+    .tg td {
+      background-color: #EBF5FF;
+      border-color: #9ABAD9;
+      border-style: solid;
+      border-width: 1px;
+      color: #444;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
 
-        <a href="https://www.youtube.com/watch?v=SUo8skGvl-Q"> Click For Awesome Highlight Video</a>
-        <br />
+    .tg th {
+      background-color: #409cff;
+      border-color: #9ABAD9;
+      border-style: solid;
+      border-width: 1px;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
 
-        <div><h1>Please take this short survey</h1></div>
-        <form>    
-            <label>
-                Email <input type="email" name="email">
-            </label>
-            <br />
-            <br />
-            <label>
-                <input type="radio" name="gender" value="male"> Yes, please send me lots of emails
-            </label>
-            <label>
-                <input type="radio" name="gender" value="female"> No, please do not send me any emails
-            </label>
-            <br />
-            <br />
-            <label for="tshirtSize">Select your T-shirt Size</label>
-            <br />
-            <select name="tshirtSize"  id="tshirtSize">
-                <option value="s">S</option>
-                <option value="m">M</option>
-                <option value="l">L</option>
-                <option value="ml">XL</option>
-            </select>
-            <br />
-            <br />
+    .tg .tg-hmp3 {
+      background-color: #D2E4FC;
+      text-align: left;
+      vertical-align: top
+    }
 
-            <p>How did you hear about us?</p>
+    .tg .tg-0lax {
+      text-align: left;
+      vertical-align: top
+    }
+  </style>
+</head>
 
-            <input type="checkbox" id="source1" name="source1" value="Facebook">
-            <label for="source1"> Facebook</label><br>
-            <input type="checkbox" id="source2" name="source2" value="Newspaper">
-            <label for="source2"> Newspaper</label><br>
-            <input type="checkbox" id="source3" name="source3" value="Referral">
-            <label for="source3"> Referral</label><br><br>
+<body>
+  <h1>Michael Jordan</h1>
+  <img id="logo" src="mj.jpg" width="400" height="500" alt="My First Website's logo">
+  <div>
+    <p>
+      Michael Jeffrey Jordan, also known by his initials MJ, is an American businessman and former professional
+      basketball player.
+      He is the principal owner and chairman of the Charlotte Hornets of the National Basketball Association and of 23XI
+      Racing in the NASCAR Cup Series.
+    </p>
+  </div>
 
-            <input type="submit" value="Submit">
-        </form>
-    </body>
+  <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-0lax">Year</th>
+        <th class="tg-0lax">PPG</th>
+        <th class="tg-0lax">MVP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-hmp3">1990-91</td>
+        <td class="tg-hmp3">31.5</td>
+        <td class="tg-hmp3">Yes</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">1991-92</td>
+        <td class="tg-0lax">30.1</td>
+        <td class="tg-0lax">Yes</td>
+      </tr>
+      <tr>
+        <td class="tg-hmp3">1992-93</td>
+        <td class="tg-hmp3">32.6</td>
+        <td class="tg-hmp3">No</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">1995-96</td>
+        <td class="tg-0lax">30.4</td>
+        <td class="tg-0lax">Yes</td>
+      </tr>
+      <tr>
+        <td class="tg-hmp3">1996-97</td>
+        <td class="tg-hmp3">29.6</td>
+        <td class="tg-hmp3">No</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">1997-98</td>
+        <td class="tg-0lax">28.7</td>
+        <td class="tg-0lax">Yes</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+
+  <ul>
+    <li> 1984 - 1993 Chicago Bulls</li>
+    <li> 1995 - 1998 Chicago Bulls</li>
+    <li> 2001 - 2003 Washington Wizards </li>
+  </ul>
+  <br />
+
+  <a href="https://www.youtube.com/watch?v=SUo8skGvl-Q"> Click For Awesome Highlight Video</a>
+  <br />
+
+  <div>
+    <h1>Please take this short survey</h1>
+  </div>
+  <form>
+    <label>
+      Email <input type="email" name="email">
+    </label>
+    <br />
+    <br />
+    <label>
+      <input type="radio" name="gender" value="male"> Yes, please send me lots of emails
+    </label>
+    <label>
+      <input type="radio" name="gender" value="female"> No, please do not send me any emails
+    </label>
+    <br />
+    <br />
+    <label for="tshirtSize">Select your T-shirt Size</label>
+    <br />
+    <select name="tshirtSize" id="tshirtSize">
+      <option value="s">S</option>
+      <option value="m">M</option>
+      <option value="l">L</option>
+      <option value="ml">XL</option>
+    </select>
+    <br />
+    <br />
+
+    <p>How did you hear about us?</p>
+
+    <input type="checkbox" id="source1" name="source1" value="Facebook">
+    <label for="source1"> Facebook</label><br>
+    <input type="checkbox" id="source2" name="source2" value="Newspaper">
+    <label for="source2"> Newspaper</label><br>
+    <input type="checkbox" id="source3" name="source3" value="Referral">
+    <label for="source3"> Referral</label><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
 </html>

@@ -1,0 +1,52 @@
+/*CSS reset settings here*/
+*{ 
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    width: 900px;
+    background-color: #d4d2ae;
+    margin: 10px auto;
+    padding: 50px
+}
+h1{
+    text-align: center;
+    display: inline;
+    font: bold;
+    font-size: 30px;
+}
+#header{
+    margin: 25px;
+    width: 200px;
+    height: 200px;
+    display: inline;
+    vertical-align: middle;
+}
+#image_array{
+    margin: 25px auto;
+}
+.row{
+    margin-left: auto;
+    margin-right: auto;
+}
+#image_array_img_blue{
+    width: 125px;
+    height: 125px;
+    display: inline;
+    border: 5px solid black;
+    border-color: black;
+    margin: 10px;
+    padding: 10px;
+    background-color: blue;
+}
+#image_array_img{
+    width: 125px;
+    height: 125px;
+    display: inline;
+    border: 5px solid black;
+    border-color: black;
+    margin: 10px;
+    padding: 10px;
+    background-color: red;
+
+}

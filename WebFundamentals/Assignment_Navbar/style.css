@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.center-box{
+    height: 250px;
+    width: 1000px;
+    background-color: blue;
+    display: flex; 
+    margin: 100px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-item{
+    height: 100px;
+    width: 100px;
+    background-color: burlywood;
+}
+
+.nav{
+    display: flex;
+    background-color: #6595ed;
+    padding: 25px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.dojoLogo{
+    flex: 1;
+}
+
+.dojoTitle{
+    flex: 2;
+}
+
+.links{
+    flex: 8;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.link_item{
+    flex: 1
+}
+
+ul, h1, li, a{
+    display: inline-block;
+    color: white;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-decoration: none;
+}

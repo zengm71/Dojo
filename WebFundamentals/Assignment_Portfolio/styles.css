@@ -1,0 +1,157 @@
+body * {
+}
+
+div.container{
+    min-height: 1000px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
+    div.container div.header{
+        background-color: #f1ebf0;
+        flex: 0.5;
+        display: flex;
+        justify-content:start;
+    }
+        div.container div.header #myName{
+            font:bold;
+            padding: 1%;
+            vertical-align:middle;
+            flex: 1;
+        }
+        div.container div.header #myTitle{
+            padding: 1%;
+            flex: 1;
+            vertical-align:middle;
+            text-align: end;
+        }
+
+    div.mainContent{
+        background-color: #2c1a20;
+        padding: 1%;
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+    }
+        div.mainContent div.aboutMe{
+            display: flex;
+            flex: 1;
+        }
+            div.mainContent div.aboutMe div.photoOfMe{
+                border:15px solid #c0c0c0;
+                flex: 1;
+            }
+            div.mainContent div.aboutMe img{
+                max-width:100%;
+            }
+            div.mainContent div.aboutMe div.textOfMe{
+                margin-left: 3%;
+                flex: 1;
+                vertical-align: top;
+                display: flex;
+                flex-direction: column;
+            }
+                div.mainContent div.aboutMe div.textOfMe div.aboutTitle{
+                    padding: 2%;
+                    background-color: #93929d;
+                    color: white;
+                    flex: 1;
+                }
+                div.mainContent div.aboutMe div.textOfMe div.aboutText{
+                    vertical-align: middle;
+                    padding: 1%;
+                    background-color: #f1ebf0;
+                    flex: 3;
+                }
+                div.mainContent div.aboutMe div.textOfMe div.aboutText a{
+                    color: black;
+                    text-decoration-color:black;
+                }
+                
+                
+        div.mainContent div.projects{
+            margin-top: 1%;
+            margin-bottom: 1%;
+            flex: 1;
+            display: flex;
+        }
+            div.mainContent div.projects div.project{
+                flex:1;
+            }
+                div.mainContent div.projects div.project div.projectTitle{
+                    color: white;
+                    background-color: #a3a2a9;
+                    padding: 2%;
+                }
+                    div.mainContent div.projects div.project div.projectPicture img{
+                        width:100%;
+                    }
+                div.mainContent div.projects div.project div.projectDiscription{
+                    height: 25%;
+                    background-color: #f1ebf0;
+                    font-size: 100%;
+                    color: black;
+                    padding: 5%;
+                }
+                div.mainContent div.projects div.project div.projectTechnology{
+                    background-color: #a3a2a9;
+                    vertical-align: top;
+                    color: white;
+                    padding: 2%;
+                }
+                div.mainContent div.projects div.project div.projectTechnologyIcon{
+                    background-color: #f1ebf0;
+                    padding: 2%;
+                    display: inline-block;
+                }
+                    div.mainContent div.projects div.project div.projectTechnologyIcon img{
+                        max-width:19%;
+                        background-color: #f1ebf0;
+                    }
+                div.mainContent div.projects div.project div.projectTechnologyButton{
+                    font-size: 25px;
+                    background-color: #f1ebf0;
+                    text-align: center;
+                    padding: 5%;
+                }
+                    div.mainContent div.projects div.project div.projectTechnologyButton a{
+                        text-decoration: none;
+                        color: white;
+                        background-color: #407d61;
+                        padding: 1%;
+                        border-radius: 10px;
+                    }
+            #projectLeft{
+                margin-right: 1%;
+            }
+            #projectMiddle{
+                margin-right: 1%;
+                margin-left: 1%;
+            }
+            #projectRight{
+                margin-left: 1%;
+            }
+        div.contact{
+            text-align: center;
+            background-color: #f1ebf0;
+        }
+            div.contact div.contactSocials{
+                display: flex;
+                justify-content: center;
+            }
+                div.contact div.contactSocials div.contactSocial{
+                    margin: 0 0% 0 0.5%;
+                    display: inline;
+                    vertical-align: middle;
+                }
+                    div.contact div.contactSocials div.contactSocial img{
+                        height: 20px;
+                        display: inline;
+                    }
+                    div.contact div.contactSocials div.contactSocial a{
+                        color: black;
+                        text-decoration-color: black;
+                        vertical-align: top;
+                        display: inline;
+                    }
+                

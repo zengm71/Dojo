@@ -1,0 +1,70 @@
+
+.wrapper{
+    border: 1px solid red;
+    width: 970px;
+    background-color: #245076;
+}
+
+.header{
+    display: flex;
+    padding-top: 1%;
+    padding-left: 5%;
+}
+    .header .headerLogo{
+        height: 100px;
+        flex: 1;
+    }
+        .header .headerLogo img{
+            height: 100px;
+        }
+    .header .headerSearch{
+        flex: 1;
+        height: 100px;
+    }
+        .header .headerSearch .headerSearchTop{
+            text-align:right;
+            padding-right: 50px;
+            height: 25px;
+        }
+            .header .headerSearch .headerSearchTop #white{
+                color: white;
+            }
+            .header .headerSearch .headerSearchTop #yellowUnderline{
+                color: yellow;
+                text-decoration: underline;
+                text-decoration-color: yellow;
+            }
+        .header .headerSearch .headerSearchBottom{
+            height: 75px;
+        }
+            .header .headerSearch .headerSearchBottom .headerSearchBottomBoxButton{
+                height: 50px;
+                text-align: right;
+                margin-right: 10px;
+                border-radius: 10px;
+                border: 1px solid red;
+                display: flex;
+            }
+                .header .headerSearch .headerSearchBottom .headerSearchBottomBoxButton .headerSearchBottomBox{
+                    background-color: white;
+                    text-align: center;
+                    width: 100px;
+                    height: 40px;
+                    padding: 5px 15px ;
+                    color: #cbcbcb;
+                    border: 1px solid white;
+                    margin-right: 5px;
+                }
+                .header .headerSearch .headerSearchBottom .headerSearchBottomBoxButton .headerSearchBottomButton{
+                    background-color: #245076;
+                    height: 40px;
+                    border-radius: 5px;
+                    border: 5px solid white;
+                }
+                .header .headerSearch .headerSearchBottom .headerSearchBottomBoxButton .headerSearchBottomButton a{
+                    color: white;
+                    text-decoration: none;
+                }
+.lower{
+    background-color: white;
+}

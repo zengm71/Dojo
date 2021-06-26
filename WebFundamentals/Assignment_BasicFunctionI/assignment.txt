@@ -1,0 +1,145 @@
+// I got 15 of the right
+
+function a(){
+    return 35;
+}
+console.log(a())
+// predict: 35
+// actual: 35
+
+function a(){
+    return 4;
+}
+console.log(a()+a());
+// predict: 8
+// actual: 8
+
+function a(b){
+    return b;
+}
+console.log(a(2)+a(4));
+// predict: 6
+// actual: 6
+
+function a(b){
+        console.log(b);
+        return b*3;
+    }
+    console.log(a(3));
+// predict: 3 then 9
+// actual: 3 then 9
+    
+function a(b){
+    return b*4;
+    console.log(b);
+ }
+ console.log(a(10));
+// predict: 40
+// actual: 40
+
+function a(b){
+    if(b<10) {
+        return 2;
+    }
+    else     {
+        return 4;
+    }
+    console.log(b);
+}
+console.log(a(15));
+// predict: 4
+// actual: 4
+
+function a(b,c){
+    return b*c;
+}
+console.log(10,3);
+console.log( a(3,10) );
+// predict: first 10 3 then 30
+// actual: first 10 3 then 30
+
+function a(b){
+    for(var i=0; i<10; i++){
+        console.log(i);
+    }
+    return i;
+}
+console.log(3);
+console.log(4);
+// predict: 3 and 4
+// actual: 3 and 4
+
+
+function a(){
+    for(var i=0; i<10; i++){
+        i = i +2;
+        console.log(i);
+    }
+}
+a();
+// predict: 2 5 8 11
+// actual: 2 5 8 11
+
+function a(b,c){
+    for(var i=b; i<c; i++) {
+       console.log(i);
+   }
+   return b*c;
+}
+a(0,10);
+console.log(a(0,10));
+// predict: 
+    // first: 0 1 2 3 4 5 6 7 8 9 
+    // then: 0 1 2 3 4 5 6 7 8 9 0
+// actual: 
+    // first: 0 1 2 3 4 5 6 7 8 9 
+    // then: 0 1 2 3 4 5 6 7 8 9 0    
+
+function a(){
+    for(var i=0; i<10; i++){
+        for(var j=0; j<10; j++){
+            console.log(j);
+        }
+        console.log(i);
+    }
+}
+// predict: 0 1 2 3 4 5 6 7 8 9 0 then 1 to 9 and 1 then 1 to 9 and 2 then ... 1 to 9 then 9
+// actual : 0 1 2 3 4 5 6 7 8 9 0 then 1 to 9 and 1 then 1 to 9 and 2 then ... 1 to 9 then 9
+
+function a(){
+    for(var i=0; i<10; i++){
+        for(var j=0; j<10; j++){
+            console.log(i,j);
+        }
+        console.log(j,i);
+    }
+}
+// predict: 0 0 0 1 0 2 ...0 9 10 0  then 1 0 1 1 12 ... 1 9 10 1 then ... then 9 0 9 1 9 2 ... 9 9 10 9 
+// actual : 0 0 0 1 0 2 ...0 9 10 0  then 1 0 1 1 12 ... 1 9 10 1 then ... then 9 0 9 1 9 2 ... 9 9 10 9 
+
+var z = 10;
+function a(){
+    var z = 15;
+    console.log(z);
+}
+console.log(z);
+// predict: 10
+// actual: 10
+
+var z = 10;
+function a(){
+    var z = 15;
+    console.log(z);
+}
+a(); //predict: 15, actual: 15
+console.log(z);  //predict: 10, actual: 10
+
+var z = 10;
+function a(){
+    var z = 15;
+    console.log(z);
+    return z;
+}
+z = a();    //predict: 15, actual: 15
+console.log(z);     //predict: 15 actual 15
+

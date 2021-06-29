@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Position Practice</title>
+    <style>
+        .selected {
+            color: blue;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#click4Alert').click(function(){
+                alert("You clicked for alert");    
+            });
+            $('#click2Hide').click(function(){
+                $('#paragraph2Hide').hide()
+            });
+            $('#click2Show').click(function(){
+                $('#paragraph2Hide').show()
+            });
+            $('#click2Toggle').click(function(){
+                $('#paragraph2Toggle').toggle("slide")
+            });
+            $('#click2SlideUp').click(function(){
+                $( "#imageOfMJ" ).slideUp( "slow", function() {
+                    console.log("Animation up.")
+                });
+            });
+            $('#click2SlideDown').click(function(){
+                $( "#imageOfMJ" ).slideDown( "slow", function() {
+                    console.log("Animation down.")
+                });
+            });
+            $('#click2FadeIn').click(function(){
+                $( "#imageOfMJ" ).fadeIn( "slow", function() {
+                    console.log("fade in.")
+                });
+            });
+            $('#click2FadeOut').click(function(){
+                $( "#imageOfMJ" ).fadeOut( "slow", function() {
+                    console.log("fade out.")
+                });
+            });
+            $("#click4Before").click(function() {
+                $("#click4Before").before("<p>Added line before</p>")
+            })
+            $("#click4After").click(function() {
+                $("#click4After").after("<p>Added line after</p>")
+            })
+            $('p').click(function() {
+                $(this).addClass( "selected" )
+            })
+            $('#click4Append').click(function() {
+                $('#appendThis').append(' this is appended')
+            })
+            $( "#click4Html" ).click(function() {
+                var htmlString = $( this ).html();
+                console.log(htmlString)
+                $( this ).append(" " + htmlString);
+            });
+            $( "#click4Attr" ).click(function() {
+                var attrString = $('#appendThis').attr('id');
+                console.log(attrString)
+                $( this ).text("The id attr of previous paragraph is " + attrString);
+            });
+            $( "#click4Val" ).click(function() {
+                var valString = $('#single').val();
+                console.log(valString)
+                $( this ).text("The val is " + valString);
+            });
+            $( "#click4Text" ).click(function() {
+                $(this).text('This is a new text')
+            })
+        })
+        
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <p id='paragraph2Hide'>this is a paragraph that will hide when you click a button, and will appear when you click another</p>
+        <button id="click4Alert">Click for alert</button>
+        <button id="click2Hide">Click to hide the first paragraph</button>
+        <button id="click2Show">Click to show the first paragraph</button>
+        <p id='paragraph2Toggle'>This is a paragraph that can be toggled. </p>
+        <button id="click2Toggle">Click to toggle the above paragraph</button>
+        <div>
+            <img id="imageOfMJ" src="mj.jpg" alt="" width="100" height="123">
+        </div>
+        <button id="click2SlideDown">Click to slide down the above image</button>
+        <button id="click2SlideUp">Click to slide up the above image</button>
+        <button id="click2FadeIn">Click to fade in the above image</button>
+        <button id="click2FadeOut">Click to fade out the above image</button>
+        <div class='simpleWords'>
+            <p>Hello</p>
+            <p>and</p>
+            <p>Goodbye</p>
+            <button id="click4Before">Click to add a line before</button>
+            <button id="click4After">Click to add a line after</button>
+            <p id='appendThis'>click on any paragraph to demo "this" and add class to turn words blue</p>
+            <button id="click4Append">Click to append something to the previous line</button>
+        </div>
+        <button id="click4Html">Click to demo 'html' function</button>
+        <button id="click4Attr">Click to demo 'attr' function</button>
+
+        <select id="single">
+            <option>Single</option>
+            <option>Single2</option>
+        </select>
+        <button id="click4Val">Click to demo 'val' function</button>
+        <button id="click4Text">Click to change its own text</button>
+
+    </div><!-- end of wrapper -->
+</body>
+
+</html>

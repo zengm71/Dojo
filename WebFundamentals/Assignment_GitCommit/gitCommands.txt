@@ -1,0 +1,14 @@
+mkdir test
+cd test 
+touch index.html styles.css
+git init
+echo "this is an html" >> index.html
+git add index.html styles.css
+git commit -m 'update html'
+echo "#this is an css" >> styles.css 
+git add styles.css
+git commit -m 'update css'
+git log
+git revert 3878b7c6add5d07f126b85892a3a28dd2bf25a25 -n
+echo "#again, this is an css" >> styles.css
+git commit -m 'revert css'

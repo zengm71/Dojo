@@ -1,0 +1,9 @@
+mkdir test
+cd test 
+touch index.html styles.css 
+cp index.html index_2.html
+cd ..
+mkdir destination
+mv test/index_2.html destination/
+rm test/styles.css
+rm -rf destination/

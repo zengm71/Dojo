@@ -1,0 +1,14 @@
+C02F503VMD6Q:Python zengm$ tree
+.
+├── Assignments
+│   └── OrganizingFiles
+│       └── tree.txt
+├── _python
+│   ├── OOP
+│   └── python_fundamentals
+├── django
+│   ├── django_fullstack
+│   ├── django_fundamentals
+│   └── django_orm
+├── lecture1.md
+└── my_environments

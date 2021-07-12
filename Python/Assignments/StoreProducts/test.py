@@ -1,5 +1,4 @@
-from product import Product
-from store import Store
+from store import Store, Product
 
 store0 = Store(name = 'Store0')
 product0 = Product(name = "product0", price = 100, category="category0", unique_id = 0)

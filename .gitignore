@@ -1,3 +1,8 @@
 WebFundamentals/MiaoZengWFExam1/*
 WebFundamentals/.DS_Store
 Python/my_environments/*
+__pycache__/
+.vscode/
+venv/
+db.sqlite3
+.DS_Store

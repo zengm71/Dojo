@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">    
+</head>
+<body>
+    <div id="top_box">
+        <h1>The current time and date</h1>
+    </div>
+    <div id="middle_box">
+        <h1>{{date}}</h1>
+        <h1>{{time}}</h1>
+    </div>
+</body>
+</html>

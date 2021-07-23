@@ -16,4 +16,4 @@ def displaySurvey(request):
         'favoriteLanguage': request.POST['favoriteLanguage'],
         'description': request.POST['description']
     }
-    return render(request, "result.html", context)
+    return render(request, "result.html", request.POST)

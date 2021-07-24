@@ -1,19 +1,26 @@
 from django.shortcuts import redirect, render, HttpResponse, resolve_url
 
 # Create your views here.
-def fillSurvey(request):
-    if request.method == 'GET':
-        print(request.GET)
-        return render(request, 'index.html')
-    if request.method == 'POST':
-        return redirect("/result")
+def index(request):
+    print('got here from redirect!')
+    return render(request, 'index.html')
 
-def displaySurvey(request):
-    print(request.POST)
-    context = {
+def fillSurvey(request):
+    print(request.method)
+    if request.method == 'GET':
+        print('redirecting')
+        return redirect('/')
+    
+    request.session['result'] = {
         'name': request.POST['name'],
         'dojoLocation': request.POST['dojoLocation'],
         'favoriteLanguage': request.POST['favoriteLanguage'],
         'description': request.POST['description']
     }
-    return render(request, "result.html", request.POST)
+    return redirect('/result')
+
+def displaySurvey(request):
+    context = {
+        'result': request.session['result']
+    }
+    return render(request, 'result.html', context)

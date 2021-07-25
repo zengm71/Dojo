@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Ninja</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}">    
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="top_box">
+            <h2 id="your_gold">Your Gold</h2>
+            <h2 id="gold_numer"> 0</h2>
+        </div>
+        <div id="middle_box">
+            <form action="process_money" method="POST">
+                {% csrf_token %}
+                <div id="location">
+                    <h2>Farm</h2>
+                    <h4>(earn 10-20 golds)</h4>
+                    <button type='submit'>Find Gold!</button>
+                </div>
+                <div id="location">
+                    <h2>Cave</h2>
+                    <h4>(earn 5-10 golds)</h4>
+                    <button type='submit'>Find Gold!</button>
+                </div>
+                <div id="location">
+                    <h2>House</h2>
+                    <h4>(earn 2-5 golds)</h4>
+                    <button type='submit'>Find Gold!</button>
+                </div>
+                <div id="location">
+                    <h2>Casino</h2>
+                    <h4>(earn/take 0-50 golds)</h4>
+                    <button type='submit'>Find Gold!</button>
+
+                </div>
+            </form>
+        </div>
+        <div id="bottom_box">
+            <h2 >Activities:</h2>
+            <p id="activity_box">this is the first</p>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

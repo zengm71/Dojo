@@ -1,0 +1,37 @@
+#wrapper{
+}
+#top_box{
+    display: inline;
+    vertical-align: middle;
+    margin: 5px 5px;
+}
+#top_box #your_gold{
+    display: inline;
+    
+}
+#top_box #gold_numer{
+    display: inline-block;
+    padding: 0px 5px;
+    width: 50px;
+    border: solid black 1px;
+}
+#middle_box{
+    margin: 5px auto;
+    display: inline;
+    vertical-align: middle;
+}
+#middle_box #location{
+    display: inline-block;
+    width: 20%;
+    padding: 10px;
+    border: solid black 1px;
+    text-align: center;
+}
+#bottom_box{
+    margin: 5px 5px;
+    
+}
+#activity_box{
+    padding: 10px;
+    border: solid black 1px;
+}

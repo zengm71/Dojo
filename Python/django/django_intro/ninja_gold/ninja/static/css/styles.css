@@ -1,19 +1,21 @@
 #wrapper{
+    display: block;
 }
 #top_box{
-    display: inline;
-    vertical-align: middle;
-    margin: 5px 5px;
+    display: flex;
+    margin: 10px 0px;
+    vertical-align:middle;
 }
 #top_box #your_gold{
-    display: inline;
-    
+    margin-right: 10px;
 }
 #top_box #gold_numer{
-    display: inline-block;
-    padding: 0px 5px;
+    padding-left: 10px;
     width: 50px;
     border: solid black 1px;
+}
+#top_box button{
+    margin: 25px 10px;
 }
 #middle_box{
     margin: 5px auto;
@@ -34,4 +36,10 @@
 #activity_box{
     padding: 10px;
     border: solid black 1px;
+}
+.earn{
+    color: green;
+}
+.lose{
+    color: red;
 }

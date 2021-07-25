@@ -15,11 +15,11 @@
         <h1>{{string}}</h1>
     </div>
     <div id='button_box'>
-        <form action="generate" method="POST">
+        <form action="generate" method="GET">
             {% csrf_token %}
             <button type='submit'>Generate</button>
         </form>
-        <form action="reset" method="POST">
+        <form action="reset" method="GET">
             {% csrf_token %}
             <button type='submit'>Reset</button>
         </form>

@@ -1,0 +1,24 @@
+from app_users.models import Users
+
+Users.objects.create(first_name = 'a', last_name = 'z', email_address = 'az@gmail.com', age = 1)
+Users.objects.create(first_name = 'b', last_name = 'y', email_address = 'by@gmail.com', age = 2)
+Users.objects.create(first_name = 'c', last_name = 'x', email_address = 'cx@gmail.com', age = 3)
+
+Users.objects.all()
+Users.objects.last()
+Users.objects.first()
+
+userToUpdate = Users.objects.get(id = 3)
+userToUpdate.last_name = 'Pancake'
+userToUpdate.save()
+Users.objects.get(id = 3).__dict__
+
+userToDelete = Users.objects.get(id = 2)
+userToDelete.delete()
+
+Users.objects.order_by('first_name')
+
+Users.objects.order_by('-first_name')
+
+for user in Users.objects.all():
+    print(user.first_name)

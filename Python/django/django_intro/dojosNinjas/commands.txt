@@ -1,0 +1,33 @@
+from dojo_ninjas_app.models import Dojo, Ninja
+
+Dojo.objects.create(name='Dojo1', city='City1', state='state1')
+Dojo.objects.create(name='Dojo2', city='City2', state='state2')
+Dojo.objects.create(name='Dojo3', city='City3', state='state3')
+
+Dojo.objects.all()
+Dojo.objects.all().delete()
+
+Dojo.objects.create(name='Dojo4', city='City4', state='state4')
+Dojo.objects.create(name='Dojo5', city='City5', state='state5')
+Dojo.objects.create(name='Dojo6', city='City6', state='state6')
+
+Ninja.objects.create(first_name = 'a', last_name = 'z', dojo = Dojo.objects.get(id=4))
+Ninja.objects.create(first_name = 'b', last_name = 'y', dojo = Dojo.objects.get(id=4))
+Ninja.objects.create(first_name = 'c', last_name = 'x', dojo = Dojo.objects.get(id=4))
+
+Ninja.objects.create(first_name = 'a1', last_name = 'z1', dojo = Dojo.objects.get(id=5))
+Ninja.objects.create(first_name = 'b1', last_name = 'y1', dojo = Dojo.objects.get(id=5))
+Ninja.objects.create(first_name = 'c1', last_name = 'x1', dojo = Dojo.objects.get(id=5))
+
+Ninja.objects.create(first_name = 'a2', last_name = 'z2', dojo = Dojo.objects.get(id=6))
+Ninja.objects.create(first_name = 'b2', last_name = 'y2', dojo = Dojo.objects.get(id=6))
+Ninja.objects.create(first_name = 'c2', last_name = 'x2', dojo = Dojo.objects.get(id=6))
+
+Dojo.objects.first().ninjas.all()
+
+Dojo.objects.last().ninjas.all()
+
+Ninja.objects.last().dojo
+
+Dojo.objects.create(name='Dojo7', city='City7', state='state7')
+Dojo.objects.create(name='Dojo9', city='City9', state='state9', desc='new dojo')

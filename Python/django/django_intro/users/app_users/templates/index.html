@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Users</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}">    
+</head>
+
+<body>
+    <div id='Upper'>
+        <h1>All the Users</h1>
+        <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0lax">First Name</th>
+                <th class="tg-0lax">Last Name</th>
+                <th class="tg-0lax">Email</th>
+                <th class="tg-0lax">Age</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              {% for user in all_users%}
+                <tr>
+                    <td class="tg-hmp3">{{user.first_name}}</td>
+                    <td class="tg-hmp3">{{user.last_name}}</td>
+                    <td class="tg-hmp3">{{user.email_address}}</td>
+                    <td class="tg-hmp3">{{user.age}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </div>
+    <div id='Lower'>
+        <h1>Add a User</h1>
+        <form action="addUser" method="POST">
+            {% csrf_token %}
+            <div id="row">
+                <label for="first_name">First name:</label>
+                <input type="text" id="first_name" name="first_name">
+                <label for="last_name">Last name:</label>
+                <input type="text" name="last_name" id="last_name">
+                
+            </div>
+            <div id="row">
+                <label for="email">Email:</label>
+                <input name="email" id="email" type="text">
+                <label for="age">Age:</label>
+                <input name="age" id='age', type="number">
+            </div>
+            <div id="row">
+                <button type='submit'>Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

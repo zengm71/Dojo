@@ -1,0 +1,18 @@
+#upper{
+    display: flex;
+}
+#left {
+    flex: 50%;
+    text-align: center;
+}
+#right {
+    flex: 50%;
+    text-align: center;
+}
+#lower {
+    text-align: center;
+}
+ul {
+    width: 15%;
+    margin: auto;
+}

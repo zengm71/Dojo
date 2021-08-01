@@ -1,0 +1,98 @@
+In [2]: from books_authors_app.models import Book, Author
+
+In [3]: Book.objects.all()
+Out[3]: <QuerySet []>
+
+In [4]: Book.objects.create(title='C Sharp')
+Out[4]: <Book: Book object (1)>
+
+In [5]: Book.objects.create(title='Java')
+Out[5]: <Book: Book object (2)>
+
+In [6]: Book.objects.create(title='Python')
+Out[6]: <Book: Book object (3)>
+
+In [7]: Book.objects.create(title='PHP')
+Out[7]: <Book: Book object (4)>
+
+In [8]: Book.objects.create(title='Ruby')
+Out[8]: <Book: Book object (5)>
+
+In [9]: Author.objects.create(first_name = 'Jane', last_name = 'Austen')
+Out[9]: <Author: Author object (1)>
+
+In [10]: Author.objects.create(first_name = 'Emily', last_name = 'Dickinson')
+Out[10]: <Author: Author object (2)>
+
+In [11]: Author.objects.create(first_name = 'Fyodor', last_name = 'Dostoevsky')
+Out[11]: <Author: Author object (3)>
+
+In [12]: Author.objects.create(first_name = 'William', last_name = 'Shakespeare')
+Out[12]: <Author: Author object (4)>
+
+In [13]: Author.objects.create(first_name = 'Lau', last_name = 'Tzu')
+Out[13]: <Author: Author object (5)>
+
+In [2]: Book.objects.filter(title = 'C Sharp')
+Out[2]: <QuerySet [<Book: Book object (1)>]>
+
+In [3]: book2update = Book.objects.get(title = 'C Sharp')
+
+In [4]: book2update
+Out[4]: <Book: Book object (1)>
+
+In [5]: book2update.title = 'C#'
+
+In [6]: book2update.save()
+
+In [7]: Book.objects.first().__dict__
+Out[7]: 
+{'_state': <django.db.models.base.ModelState at 0x7fbf21bdb6a0>,
+ 'id': 1,
+ 'title': 'C#',
+ 'desc': '',
+ 'created_at': datetime.datetime(2021, 8, 1, 5, 0, 0, 844711, tzinfo=<UTC>),
+ 'updated_at': datetime.datetime(2021, 8, 1, 5, 5, 58, 381459, tzinfo=<UTC>)}
+
+In [10]: author2update = Author.objects.get(id=4)
+
+In [11]: author2update.first_name = 'Bill'
+
+In [13]: author2update.save()
+
+In [14]: Author.objects.get(id=4).__dict__
+Out[14]: 
+{'_state': <django.db.models.base.ModelState at 0x7fbf214e5100>,
+ 'id': 4,
+ 'first_name': 'Bill',
+ 'last_name': 'Shakespeare',
+ 'notes': 'this is an empty description',
+ 'created_at': datetime.datetime(2021, 8, 1, 5, 2, 31, 801228, tzinfo=<UTC>),
+ 'updated_at': datetime.datetime(2021, 8, 1, 5, 8, 36, 140560, tzinfo=<UTC>)}
+
+In [25]: Author.objects.get(id=1).books.add(Book.objects.get(id=1))
+In [26]: Author.objects.get(id=1).books.add(Book.objects.get(id=2))
+In [27]: Author.objects.get(id=1).books.all()
+Out[27]: <QuerySet [<Book: Book object (1)>, <Book: Book object (2)>]>
+
+for i in range(1,4):
+    Book.objects.get(id=i).authors.add(Author.objects.get(id=2))
+    print(i)
+
+for i in range(1,5):
+    Book.objects.get(id=i).authors.add(Author.objects.get(id=3))
+    print(i)
+
+for i in range(1,6):
+    Book.objects.get(id=i).authors.add(Author.objects.get(id=4))
+    print(i)
+
+Book.objects.get(id=3).authors.all()
+
+Book.objects.get(id=3).authors.remove(Book.objects.get(id=3).authors.first())
+
+Book.objects.get(id=2).authors.add(Author.objects.get(id=5))
+
+Author.objects.get(id=3).books.all()
+
+Book.objects.get(id=5).authors.all()

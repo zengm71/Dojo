@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Books & Authors</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}">    
+</head>
+
+<body>
+    <div id='Wrapper'>
+        <div id='Left'>
+            <h1>Add an Author</h1>
+            <form action="addAuthor" method="POST">
+                {% csrf_token %}
+                <div id="row">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name">
+                    <label for="notes">Notes:</label>
+                    <input type="text" name="notes" id="notes">
+                    
+                </div>
+                <div id="row">
+                    <button type='submit'>Add</button>
+                </div>
+            </form>
+        </div>
+        <div id='Right'>
+            <table class="tg">
+                <thead>
+                  <tr>
+                    <th class="tg-0lax">ID</th>
+                    <th class="tg-0lax">Name</th>
+                    <th class="tg-0lax">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for author in all_authors%}
+                    <tr>
+                        <td class="tg-hmp3">{{author.id}}</td>
+                        <td class="tg-hmp3">{{author.first_name}} {{author.last_name}}</td>
+                        <td class="tg-hmp3"><a href="http://localhost:8000/authors/{{author.id}}">View</a></td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+</body>
+</html>

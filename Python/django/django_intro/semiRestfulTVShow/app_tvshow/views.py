@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.contrib import messages
 from app_tvshow.models import show
 
 # Create your views here.
@@ -20,23 +21,36 @@ def new_form(request):
 
 def new(request):
     print(request.POST)
+    errors = show.objects.basic_validator(request.POST)
 
-    show.objects.create(title = request.POST['title'], \
-        network = request.POST['network'], \
-        releaseDate = request.POST['releaseDate'], \
-        desc = request.POST['desc'])
-    id = show.objects.get(title = request.POST['title'], \
-        network = request.POST['network'], \
-        releaseDate = request.POST['releaseDate']).id
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/shows/new')
+    else:
+        show.objects.create(title = request.POST['title'], \
+            network = request.POST['network'], \
+            releaseDate = request.POST['releaseDate'], \
+            desc = request.POST['desc'])
+        id = show.objects.get(title = request.POST['title'], \
+            network = request.POST['network'], \
+            releaseDate = request.POST['releaseDate']).id
     return redirect(f'/shows/{id}')
 
 def update(request, id):
-    show2update = show.objects.get(id = id)
-    show2update.title = request.POST['title']
-    show2update.network = request.POST['network']
-    show2update.releaseDate = request.POST['releaseDate']
-    show2update.desc = request.POST['desc']
-    show2update.save()
+    errors = show.objects.basic_validator(request.POST)
+
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect(f'/shows/{id}/edit')
+    else:
+        show2update = show.objects.get(id = id)
+        show2update.title = request.POST['title']
+        show2update.network = request.POST['network']
+        show2update.releaseDate = request.POST['releaseDate']
+        show2update.desc = request.POST['desc']
+        show2update.save()
     return redirect(f'/shows/{id}')
 
 def edit(request, id):

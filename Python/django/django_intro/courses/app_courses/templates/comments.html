@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Comment on a class</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}">
+</head>
+
+<body>
+    <h1>Are you sure you want to delete the following course?</h1>
+    <h2>Name: {{course.name}} </h2>
+    <h2>Description: {{course.desc.desc}}</h2>
+
+    <form action="addComment" id="formComment" method="POST">
+        {% csrf_token %}
+        <div>
+            <input type="hidden" id="id" name="id", value={{course.id}}>
+            <label for="comment">Comment:</label>
+            <input type="text" id="comment" name="comment">
+        </div>
+        <button type='submit'>Add Comment</button>
+    </form>
+    <h1>Comments</h1>
+    {% for comment in course.comments.all%}
+        <p>{{comment.comment}}</p>
+    {% endfor %}
+    <button onclick="location.href='http://127.0.0.1:8000/'" type="button">Go Back</button>
+
+</body>

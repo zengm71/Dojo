@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Add a new course</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}">
+</head>
+
+<body>
+    <div>
+        <h1>Add a new course</h1>
+        <ul class="messages">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+        <form action="add" id="formCourse" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="desc">Description:</label>
+                <input type="text" id="desc" name="desc">
+            </div>
+            <button type='submit'>Add</button>
+        </form>
+
+        <h1> Courses</h1>
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th class="tg-0lax">Course Name</th>
+                    <th class="tg-0lax">Description</th>
+                    <th class="tg-0lax">Date Added</th>
+                    <th class="tg-0lax">Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in all_courses%}
+                <tr>
+                    <td class="tg-hmp3">{{course.name}}</td>
+                    <td class="tg-hmp3">{{course.desc.desc}}</td>
+                    <td class="tg-hmp3">{{course.created_at}}</td>
+                    <td class="tg-hmp3">
+                        <a href="{% url 'destroy' course.id %}">remove</a>
+                        <a href="{% url 'comment' course.id %}">comment</a>
+
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+#wrapper{
+    display: flex;
+}
+#left{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+#left p{
+    text-align: left;
+    margin:  0 0 0 30%;
+}
+#right{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Books</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="books_top">
+            <h1>Success! Welcome {{this_user.first_name}}</h1>
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+
+        <div class="row">
+            <div class="class=col-5">
+                <h1>{{book.title}}</h1>
+                <p>Added by: {{uploaded_by.first_name}} {{uploaded_by.last_name}}</p>
+                <p>Added on: {{book.created_at}}</p>
+                <p>Last updated on: {{book.updated_at}}</p>
+                {% if this_user == uploaded_by %}
+                    <p>Description: {{book.description}}</p>
+                    <form action="update_description" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input name="description" type="text">
+                            <input type="hidden" value={{book.id}} name="book_id">
+                        </div>
+                        <div class="form-group">
+                            <button type='submit'>Update</button>
+                        </div>
+                    </form>
+                    <form action="delete_book" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="hidden" value={{book.id}} name="book_id">
+                            <button type='submit'>Delete</button>
+                        </div>
+                    </form>
+                {% else %}
+                    <p>Description: {{book.description}}</p>
+                {% endif %}
+            </div>
+            <div class="class=col-5">
+                <h1>Users Who Like This Book</h1>
+                <ul>
+                    {% for user_who_like in users_who_like%}
+                    <li>{{user_who_like.first_name}} {{user_who_like.last_name}}</li>
+                    {% endfor %}
+                </ul>
+                {% if this_user not in users_who_like %}
+                    <a href="http://127.0.0.1:8000/books/add/{{this_user.id}}/{{book.id}}">Add to Favorites</a>
+                {% endif %}
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

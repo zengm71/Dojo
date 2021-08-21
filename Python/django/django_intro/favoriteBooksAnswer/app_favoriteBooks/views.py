@@ -65,7 +65,7 @@ def create_book(request):
         # bonus: the book creator automatically favorites the book
         user.favorited_books.add(book)
 
-        return redirect(f'/books/{book.id}')
+        return redirect(f'/books')
 
 def show_one(request, book_id):
     context = {

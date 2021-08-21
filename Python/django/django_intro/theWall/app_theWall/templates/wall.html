@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">The Wall: post something!</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto"></ul>
+                <span class="navbar-text">
+                    Welcome, {{request.session.greeting}} </a> <a href="/logout" role="button"
+                        class="btn btn-sm btn-info ml-2 text-white">Logout</a>
+                </span>
+            </div>
+        </div>
+    </nav><!-- /NAVBAR -->
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <form action="/wall/createPost" method="post">
+            {% csrf_token %}
+            {% for message in messages %}
+                <p class="text-danger small">{{ message }}</p>
+            {% endfor %}
+       
+            <div class="form-group">
+                <div>
+                    <label for="message">Post a message</label>
+                </div>
+                <div>
+                    <input type="text" class="form-control" name="message">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="float: right;">Post a message</button>
+        </form>
+
+        <br><br>
+
+        {% for post in all_posts %}
+            <div class="container">
+                <h5>{{post.postUser.first_name}} {{post.postUser.last_name}} - {{post.created_at}}</h5>
+                <div>
+                    <h5>{{post.message}}</h5>
+                    {% if post.postUser.id == request.session.user_id %}
+                        <a href="/wall/delete/{{post.id}}" role="button" class="btn btn-danger" style="float: right;">Delete Post</a>
+                    {% endif%}
+                    <br><br>
+                    <div style="margin: 0 0 0 10%;">
+                        {% for comment in post.comment.all %}
+                            <h5>{{comment.commentUser.first_name}} {{comment.commentUser.last_name}} - {{comment.created_at}}</h5>
+                            <h5 >{{comment.comment}}</h5>
+                            <br>
+                        {% endfor %}
+                        <form action="/wall/{{post.id}}/createComment" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div>
+                                    <label for="comment">Post a comment</label>
+                                </div>
+                                <div>
+                                    <input type="text" class="form-control" name="comment">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="float: right; border: #4CAF50; background-color: #4CAF50;">Post a comment</button>
+                        </form>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        {% endfor %}
+    </div><!-- /MAIN CONTENT -->
+</body>
+
+</html>
